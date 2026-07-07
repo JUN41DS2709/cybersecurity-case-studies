@@ -41,7 +41,7 @@
 
 # 1. Executive Summary
 
-![WannaCry Overview](images/hero.jpg)
+![WannaCry Overview](images/executive-summary.jpg)
 
 ## Overview
 
@@ -74,6 +74,7 @@ Unlike many ransomware families, WannaCry did **not** rely on user interaction s
 The attack infected approximately **230,000 computers** across **more than 150 countries** within a matter of days.
 
 Some of the most heavily affected organizations included:
+![Global Victims](images/global-impact-map-2.png)
 
 - United Kingdom National Health Service (NHS)
 - Telefónica (Spain)
@@ -133,7 +134,7 @@ The incident demonstrated that:
 
 # 2. Background
 
-![Shadow Brokers](images/shadow-brokers.png)
+![Shadow Brokers](images/shadow-brokers.jpg)
 
 Understanding WannaCry requires examining the events that occurred before the attack itself.
 
@@ -153,7 +154,7 @@ The publication of these exploits marked one of the most significant intelligenc
 
 ## EternalBlue
 
-![EternalBlue](images/eternalblue.png)
+![EternalBlue](images/eternalblue.jpg)
 
 ### Overview
 
@@ -187,8 +188,6 @@ Unlike phishing attacks, EternalBlue enabled attackers to compromise systems sim
 ---
 
 ## DoublePulsar
-
-![DoublePulsar](images/doublepulsar.png)
 
 **DoublePulsar** is a kernel-mode backdoor that was frequently deployed after successful EternalBlue exploitation.
 
@@ -248,8 +247,6 @@ Systems that had not installed Microsoft's **MS17-010** security update remained
 
 # 3. Timeline
 
-![Timeline](images/timeline.png)
-
 | Date | Event |
 |------|-------|
 | **14 March 2017** | Microsoft released security bulletin **MS17-010**, addressing multiple SMB vulnerabilities including **CVE-2017-0144**. |
@@ -271,7 +268,7 @@ Systems that had not installed Microsoft's **MS17-010** security update remained
 
 # 4. Threat Actor
 
-![Threat Actor](images/threat-actor.png)
+![Threat Actor](images/threat-actor.jpg)
 
 ## Attribution
 
@@ -319,7 +316,8 @@ Regardless of the original intent, the attack caused billions of dollars in econ
 
 # 5. Technical Analysis
 
-![Attack Chain](images/attack-chain.png)
+![Attack Chain](images/attack-overview.jpg)
+![Attack Chain](images/attack-chain.jpg)
 
 ## Attack Overview
 
@@ -363,8 +361,6 @@ Repeat
 
 # 5.1 Initial Access
 
-![Initial Access](images/initial-access.png)
-
 ## MITRE ATT&CK
 
 **T1210 – Exploitation of Remote Services**
@@ -388,9 +384,6 @@ Successful exploitation resulted in **Remote Code Execution (RCE)**, allowing Wa
 ---
 
 # 5.2 Execution
-
-![Execution](images/execution.png)
-
 ## MITRE ATT&CK
 
 **T1059 – Command and Scripting Interpreter (Windows)**
@@ -414,8 +407,6 @@ Simultaneously, the malware continued scanning the network for additional vulner
 
 # 5.3 Persistence
 
-![Persistence](images/persistence.png)
-
 ## MITRE ATT&CK
 
 **T1547.001 – Registry Run Keys / Startup Folder**
@@ -432,8 +423,6 @@ Because WannaCry spread autonomously within minutes, persistence played a less s
 
 # 5.4 Privilege Escalation
 
-![Privilege Escalation](images/privilege-escalation.png)
-
 ## Assessment
 
 No dedicated privilege escalation technique has been conclusively identified as part of WannaCry's primary attack chain.
@@ -443,8 +432,6 @@ The EternalBlue exploit already provided sufficient privileges to execute arbitr
 ---
 
 # 5.5 Credential Access
-
-![Credential Access](images/credential-access.png)
 
 ## Assessment
 
@@ -463,8 +450,6 @@ Its primary objective was rapid propagation followed by file encryption.
 ---
 
 # 5.6 Defense Evasion
-
-![Defense Evasion](images/defense-evasion.png)
 
 ## MITRE ATT&CK
 
@@ -488,8 +473,6 @@ Although the malware did not exhibit the sophisticated evasion capabilities comm
 
 # 5.7 Discovery
 
-![Discovery](images/discovery.png)
-
 ## MITRE ATT&CK
 
 **T1046 – Network Service Discovery**
@@ -505,8 +488,6 @@ This discovery process enabled autonomous propagation without requiring attacker
 ---
 
 # 5.8 Lateral Movement
-
-![Lateral Movement](images/lateral-movement.png)
 
 ## MITRE ATT&CK
 
@@ -545,8 +526,6 @@ Repeat
 
 # 5.9 Collection
 
-![Collection](images/collection.png)
-
 ## Assessment
 
 WannaCry did **not** collect sensitive information prior to encryption.
@@ -572,8 +551,6 @@ The objective was to maximize operational disruption by encrypting valuable user
 
 # 5.10 Exfiltration
 
-![Exfiltration](images/exfiltration.png)
-
 ## Assessment
 
 No credible evidence suggests that WannaCry exfiltrated victim data before encryption.
@@ -585,8 +562,6 @@ This distinction is significant because many contemporary ransomware operations 
 ---
 
 # 5.11 Impact
-
-![Impact](images/impact.png)
 
 The WannaCry outbreak became one of the largest ransomware incidents ever recorded.
 
@@ -657,7 +632,7 @@ The attack demonstrated that:
 
 # 6. MITRE ATT&CK Mapping
 
-![MITRE ATT&CK](images/mitre-attack.png)
+![MITRE ATT&CK](images/mitre-attack.jpg)
 
 The following table maps the observed behaviors of WannaCry to the MITRE ATT&CK framework. Only techniques supported by publicly available technical analysis have been included.
 
@@ -680,6 +655,8 @@ The following table maps the observed behaviors of WannaCry to the MITRE ATT&CK 
 ![IoCs](images/iocs.png)
 
 Indicators of Compromise (IoCs) help security teams identify systems that may have been infected with WannaCry.
+
+![IoCs](images/ioc.png)
 
 ## Files
 
@@ -739,9 +716,6 @@ MS17-010
 ---
 
 # 8. Detection Opportunities
-
-![Detection](images/detection-opportunities.png)
-
 Early detection of WannaCry activity could significantly reduce its impact by preventing widespread lateral movement.
 
 ---
@@ -795,10 +769,11 @@ Threat hunters should investigate:
 - Suspicious SMB scanning behavior
 
 ---
+# Lessons for Red Teams and Blue Teams 
+
+![randb](images/randb.jpg)
 
 # 9. Defensive Recommendations
-
-![Defensive Recommendations](images/defensive-recommendations.png)
 
 The WannaCry outbreak demonstrated that effective cybersecurity depends on multiple layers of defense rather than a single security control.
 
@@ -916,8 +891,6 @@ Backups remain one of the most effective mitigations against ransomware.
 
 # 10. Lessons for Red Teams
 
-![Red Team](images/red-team-lessons.png)
-
 Although WannaCry was a criminal malware campaign, it provides valuable lessons for penetration testers and red team operators.
 
 ## Key Lessons
@@ -983,7 +956,7 @@ As an aspiring offensive security professional, this case study reinforced the i
 
 # 11. Key Takeaways
 
-![Key Takeaways](images/key-takeaways.png)
+![Key Takeaways](images/key.jpg)
 
 - WannaCry was one of the largest ransomware outbreaks in history.
 - The malware exploited **CVE-2017-0144** using the EternalBlue exploit.
