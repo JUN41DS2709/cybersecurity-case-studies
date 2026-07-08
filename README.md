@@ -1,4 +1,5 @@
 # Cybersecurity Case Studies
+![case study](images/hero.png)
 
 A curated collection of documented cybersecurity incidents, data breaches, major vulnerabilities, and global cyber attacks analyzed from both offensive and defensive perspectives.
 
@@ -85,10 +86,6 @@ By studying historical and modern cyber incidents, defenders can better understa
 ## Disclaimer
 
 This repository is intended for educational, research, and defensive security purposes only. All information presented is derived from publicly available sources, threat intelligence reports, vendor advisories, and official disclosures.
-
-## License
-
-Choose an appropriate license for your project before publishing.
 
 ---
 
