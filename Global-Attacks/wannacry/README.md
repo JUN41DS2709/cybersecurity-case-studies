@@ -1,6 +1,6 @@
 # Technical Analysis of the WannaCry Ransomware Cyberattack
 
-![WannaCry Banner](images/hero.jpg)
+![WannaCry Banner](images/hero.png)
 
 > **A Technical Malware Case Study on the Global WannaCry Ransomware Outbreak (2017)**
 
